@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-main() => runApp(Perguntados());
+main() => runApp(new Perguntados());
 
 class Perguntados extends StatelessWidget {
-  void respotas() {
-    print('Respota 1');
+  void respostas() {
+    print("Sua Resposta");
   }
 
   final perguntas = [
-    'Qual e seu nome ?',
-    'Qual e Sua Idade ?',
-    'Qual e sua cor favoria ?',
+    'Qual seu animal favorito  ?',
+    'Qual e sua cor favorita ? '
+        'Qual e seu Signo favorito ?'
   ];
 
   @override
@@ -19,22 +19,22 @@ class Perguntados extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Center(child: Text('Perguntados')),
+          title: Center(child: Text("Perguntados")),
         ),
         body: Column(
-          children: [
+          children: <Widget>[
             Text(perguntas.elementAt(0)),
             RaisedButton(
-              onPressed: () => this.respotas(),
-              child: Text('Respotas 1'),
+              child: Text("Pergunta 1"),
+              onPressed: () => this.respostas(),
             ),
             RaisedButton(
-              onPressed: () => this.respotas(),
-              child: Text('Respotas 2'),
+              child: Text("Pergunta 1"),
+              onPressed: () => this.respostas(),
             ),
             RaisedButton(
-              onPressed: () => this.respotas(),
-              child: Text('Respotas 3'),
+              child: Text("Pergunta 1"),
+              onPressed: () => this.respostas(),
             ),
           ],
         ),
