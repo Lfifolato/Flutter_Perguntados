@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import './questao.dart';
+import './respotas.dart';
 
 main() => runApp(perguntados());
 
+// ignore: camel_case_types
 class perguntados extends StatefulWidget {
   perguntados({Key key}) : super(key: key);
 
   @override
-  _perguntadosState createState() => _perguntadosState();
+  perguntadosState createState() => perguntadosState();
 }
 
-class _perguntadosState extends State<perguntados> {
+// ignore: camel_case_types
+class perguntadosState extends State<perguntados> {
   var perguntaSelecionada = 0;
 
   final perguntas = [
@@ -28,25 +32,17 @@ class _perguntadosState extends State<perguntados> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Center(child: Text("Perguntados")),
         ),
         body: Column(
           children: <Widget>[
-            Text(perguntas.elementAt(perguntaSelecionada)),
-            RaisedButton(
-              child: Text("Respota 1"),
-              onPressed: () => this.respostas(),
-            ),
-            RaisedButton(
-              child: Text("Respota 2"),
-              onPressed: () => this.respostas(),
-            ),
-            RaisedButton(
-              child: Text("Respota 3"),
-              onPressed: () => this.respostas(),
-            ),
+            Questao(perguntas[perguntaSelecionada]),
+            Respotas("Respota 1", respostas),
+            Respotas("Respota 2", respostas),
+            Respotas("Respota 3", respostas),
           ],
         ),
       ),
