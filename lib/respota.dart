@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Respotas extends StatelessWidget {
-  final void Function() onSelc;
+  String texto;
 
-  final String texto;
+  final void Function() onSelec;
 
-  Respotas(this.texto, this.onSelc);
+  Respotas(this.texto, this.onSelec);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class Respotas extends StatelessWidget {
         textColor: Colors.white,
         color: Colors.blueAccent,
         child: Text(texto),
-        onPressed: onSelc,
+        onPressed: onSelec,
       ),
     );
   }

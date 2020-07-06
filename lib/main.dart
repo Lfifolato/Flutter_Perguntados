@@ -1,48 +1,42 @@
 import 'package:flutter/material.dart';
 import './questao.dart';
-import './respotas.dart';
+import './respota.dart';
 
-main() => runApp(perguntados());
+main() => runApp(Perguntados());
 
-// ignore: camel_case_types
-class perguntados extends StatefulWidget {
-  perguntados({Key key}) : super(key: key);
-
+class Perguntados extends StatefulWidget {
   @override
-  perguntadosState createState() => perguntadosState();
+  _PerguntadosState createState() => _PerguntadosState();
 }
 
-// ignore: camel_case_types
-class perguntadosState extends State<perguntados> {
+class _PerguntadosState extends State<Perguntados> {
   var perguntaSelecionada = 0;
 
-  final perguntas = [
-    "Qual e Seu Animal favorito ?",
-    "Qual e sua Cor favorita ? ",
-    "Qual e seu Carro Favorito ?"
-  ];
-
-  void respostas() {
+  void respota() {
     setState(() {
       perguntaSelecionada++;
     });
     print("Sua Respostas");
   }
 
+  final pergunta = [
+    "Qual e sua Cor favorita ?",
+    "Qual e seu animal Favorito ?",
+    "Qual e seu carro Favorito ?",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text("Perguntados")),
-        ),
+        appBar: AppBar(title: Center(child: Text("Perguntados"))),
         body: Column(
           children: <Widget>[
-            Questao(perguntas[perguntaSelecionada]),
-            Respotas("Respota 1", respostas),
-            Respotas("Respota 2", respostas),
-            Respotas("Respota 3", respostas),
+            Questao(pergunta.elementAt(perguntaSelecionada)),
+            Respotas("Resposta 1", respota),
+            Respotas("Resposta 2", respota),
+            Respotas("Resposta 3", respota),
           ],
         ),
       ),
