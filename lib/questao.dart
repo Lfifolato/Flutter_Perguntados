@@ -8,7 +8,7 @@ class Questao extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.all(12),
       width: double.infinity,
       child: Text(
         texto,
