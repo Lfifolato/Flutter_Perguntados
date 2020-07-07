@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './questao.dart';
-import './respota.dart';
+import 'widget/questao.dart';
+import 'widget/respota.dart';
 
 main() => runApp(Perguntados());
 
